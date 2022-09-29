@@ -1,9 +1,22 @@
 #!/usr/bin/python3
-# 0-square_matrix_simple.py
-
 
 def square_matrix_simple(matrix=[]):
     """
-    Compute the square value of all integers of a matrix.
+    Square each element of matrix
+    Args:
+        matrix - a 2d lists
     """
-    return ([list(map(lambda x: x * x, row)) for row in matrix])
+    if matrix is None:
+        return None
+    return [
+        [x**2 for x in row] for row in matrix
+    ]
+
+
+if __name__ == '__main__':
+    s = square_matrix_simple([
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ])
+    print(s)
